@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Cross-document Drag &amp; Drop Example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="en-gb, English" />
+        <link rel="stylesheet" href="style/style.css" />
+        <script type="text/javascript" src="js/dragndrop.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Cross-document Drag &amp; Drop Example</h1>
+            <div class="content">
+                <p>NORMAL document</p>
+                <ul class="elements" id="draggables">
+                    <li data-element="1">1</li>
+                    <li data-element="2">2</li>
+                    <li data-element="3">3</li>
+                    <li data-element="4">4</li>
+                    <li data-element="5">5</li>
+                    <li data-element="6">6</li>
+                </ul>
+            </div>
+            <div class="content">
+                <p>IFRAME document</p>
+                <iframe id="iframe1" src="iframe1.html" frameborder="0">
+                    It seems that your browser does not support iframes.
+                </iframe>
+            </div>
+            <div class="resources">
+                <h4>Resources:</h4>
+                <ol>
+                    <li><a href="http://www.html5rocks.com/en/tutorials/dnd/basics/">HMTL5 ROCKS TUTORIALS - Native HTML5 Drag And Drop</a></li>
+                    <li><a href="http://html5doctor.com/native-drag-and-drop/">html5 Doctor - Native Drag and Drop</a></li>
+                    <li><a href="http://html5doctor.com/html5-custom-data-attributes/">html5 Doctor - HTML5 Custom Data Attributes (data-*)</a></li>
+                </ol>
+            </div>
+        </div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function()
+            {
+                var ddmgr = new DragAndDropManager();
+                ddmgr.addDraggables(document.querySelector("#draggables"));
+                ddmgr.addDroppable(document.querySelector("#draggables"));
+            });
+
+        </script>
+    </body>
+</html>
+<!--
+@author: Radu Cotescu (radu@cotescu.com)    
+-->

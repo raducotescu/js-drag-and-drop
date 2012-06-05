@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Cross-document drag &amp; drop example - iframe 1</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="en-gb, English" />
+        <link rel="stylesheet" href="style/style.css" />
+        <script type="text/javascript" src="js/dragndrop.js"></script>
+    </head>
+    <body>
+        <ul class="elements" id="droppable">
+            <li data-element="a">a</li>
+            <li data-element="b">b</li>
+            <li data-element="c">c</li>
+            <li data-element="d">d</li>
+            <li data-element="e">e</li>
+            <li data-element="f">f</li>
+        </ul>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function()
+            {
+                var ddmgr = new DragAndDropManager();
+                ddmgr.addDraggables(document.querySelector("#droppable"));
+                ddmgr.addDroppable(document.querySelector("#droppable"));
+            });
+
+        </script>
+    </body>
+</html>
+<!--
+@author: Radu Cotescu (radu@cotescu.com)    
+-->
